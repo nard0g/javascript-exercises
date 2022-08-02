@@ -1,22 +1,12 @@
-const palindromes = require('./palindromes')
+const palindromes = function (myString) {
+    const strippedString = myString.replace(/[^a-z0-9]/gi, '').toUpperCase();
+    const reversedString = strippedString.split("").reverse().join("").toUpperCase();
+//    console.log(strippedString)
+//    console.log(reversedString)
+    return strippedString === reversedString ? true: false;
+};
 
-describe('palindromes', () => {
-  test('works with single words', () => {
-    expect(palindromes('racecar')).toBe(true);
-  });
-  test('works with punctuation ', () => {
-    expect(palindromes('racecar!')).toBe(true);
-  });
-  test('works with upper-case letters ', () => {
-    expect(palindromes('Racecar!')).toBe(true);
-  });
-  test('works with multiple words', () => {
-    expect(palindromes('A car, a man, a maraca.')).toBe(true);
-  });
-  test('works with multiple words', () => {
-    expect(palindromes('Animal loots foliated detail of stool lamina.')).toBe(true);
-  });
-  test('doesn\'t just always return true', () => {
-    expect(palindromes('ZZZZ car, a man, a maracaz.')).toBe(false);
-  });
-});
+palindromes("racecar!")
+
+// Do not edit below this line
+module.exports = palindromes;
