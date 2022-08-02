@@ -19,7 +19,6 @@ const fibonacci = function(fibLength) {
     return valueB;
 };
 
-fibonacci('1')
 
 // Do not edit below this line
 module.exports = fibonacci;
